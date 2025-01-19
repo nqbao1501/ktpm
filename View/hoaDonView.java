@@ -25,6 +25,7 @@ public class hoaDonView extends JFrame {
 	public JButton btnXoaDichVu;	
 	public JButton btnTimKiemHoaDon;
 	public JButton btnXoaHoaDon;
+	public JButton btnDong;
 	
 	public JLabel lblMaDichVu;
 	public JLabel lblSoLuong;
@@ -218,6 +219,14 @@ public class hoaDonView extends JFrame {
 		btnXoaHoaDon.setBounds(745, 460, 119, 34);
 		contentPane.add(btnXoaHoaDon);
 
-	       setVisible(true);
+        btnDong = new JButton("Đóng");
+        btnDong.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        btnDong.setBounds(745, 550, 119, 34);
+        contentPane.add(btnDong);
+
+        // Sự kiện đóng cửa sổ
+        btnDong.addActionListener(e -> dispose());
+
+        setVisible(true);
 	}
 }

@@ -13,7 +13,7 @@ import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class dichVuView extends JFrame {
+public class dichVuViewBenhNhan extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	public JPanel contentPane;
@@ -22,8 +22,6 @@ public class dichVuView extends JFrame {
 	public JTextField GiaTienDichVuField;
 	public JTextField HeSoBaoHiemField;
 	public JButton btnTimKiem;
-	public JButton btnThem;
-	public JButton btnXoa;
 	public JComboBox<String> LoaiDichVuComboBox;
 	public JButton btnDong;
 
@@ -34,7 +32,7 @@ public class dichVuView extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					dichVuView frame = new dichVuView();
+					dichVuViewBenhNhan frame = new dichVuViewBenhNhan();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +44,7 @@ public class dichVuView extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public dichVuView() {
+	public dichVuViewBenhNhan() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
@@ -84,19 +82,11 @@ public class dichVuView extends JFrame {
 		contentPane.add(HeSoBaoHiemField);
 		
 		btnTimKiem = new JButton("Tìm kiếm");
-		btnTimKiem.setBounds(37, 319, 89, 23);
+		btnTimKiem.setBounds(171, 319, 147, 23);
 		contentPane.add(btnTimKiem);
-		
-		btnThem = new JButton("Thêm/Sửa");
 
-		btnThem.setBounds(171, 319, 147, 23);
-		contentPane.add(btnThem);
 		
-		btnXoa = new JButton("Xoá");
-		btnXoa.setBounds(358, 319, 89, 23);
-		contentPane.add(btnXoa);
-		
-		JLabel lblTenChinh = new JLabel("Quản lý dịch vụ");
+		JLabel lblTenChinh = new JLabel("Tìm dịch vụ");
 		lblTenChinh.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblTenChinh.setBounds(155, 11, 280, 48);
 		contentPane.add(lblTenChinh);
