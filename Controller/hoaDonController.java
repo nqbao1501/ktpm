@@ -16,19 +16,20 @@ public class hoaDonController {
     public hoaDonController(hoaDonView view) throws SQLException, ClassNotFoundException {
         this.view = view;
 
-        // Initialize database connection
+        
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         String url = "jdbc:sqlserver://localhost:1433;databaseName=quanLyVienPhi;encrypt=false";
         String username = "sa";
         String password = "1234567890";
         connection = DriverManager.getConnection(url, username, password);
-        // Add action listeners for buttons
+        
 
         view.btnThemDichVu.addActionListener(e -> themHoacSuaDichVu());
         view.btnXoaDichVu.addActionListener(e-> xoaDichVu()); 
         view.btnLuuHoaDon.addActionListener(e-> luuHoaDon());
         view.btnTimKiemHoaDon.addActionListener(e->timHoaDon());
         view.btnXoaHoaDon.addActionListener(e->xoaHoaDon());
+        
     }
     private void themHoacSuaDichVu() {
         String maHoaDon = view.MaHoaDonField.getText().trim();
@@ -447,6 +448,10 @@ public class hoaDonController {
             view.MaBenhNhanField.setText("");
             view.NgayTaoHoaDonField.setText("");
             view.HinhThucThanhToanField.setText("");
+            view.TongTienBHYTField.setText("");
+            view.TongtienDichVuField.setText("");
+            view.TongTienThanhToanField.setText("");
+            
 
             // Clear bảng JTable
             DefaultTableModel model = (DefaultTableModel) view.table.getModel();
